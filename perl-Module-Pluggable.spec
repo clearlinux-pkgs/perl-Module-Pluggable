@@ -4,7 +4,7 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 2
+Release  : 3
 URL      : http://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
