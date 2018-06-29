@@ -4,25 +4,25 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 4
-URL      : http://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
-Source0  : http://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
+Release  : 5
+URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Module-Pluggable-doc
+Requires: perl-Module-Pluggable-man
 
 %description
 NAME
 Module::Pluggable - automatically give your module the ability to have
 plugins
 
-%package doc
-Summary: doc components for the perl-Module-Pluggable package.
-Group: Documentation
+%package man
+Summary: man components for the perl-Module-Pluggable package.
+Group: Default
 
-%description doc
-doc components for the perl-Module-Pluggable package.
+%description man
+man components for the perl-Module-Pluggable package.
 
 
 %prep
@@ -66,6 +66,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/lib/perl5/site_perl/5.26.1/Module/Pluggable.pm
 /usr/lib/perl5/site_perl/5.26.1/Module/Pluggable/Object.pm
 
-%files doc
+%files man
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+/usr/share/man/man3/Devel::InnerPackage.3
+/usr/share/man/man3/Module::Pluggable.3
+/usr/share/man/man3/Module::Pluggable::Object.3
