@@ -4,25 +4,26 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Module-Pluggable-man
+BuildRequires : buildreq-cpan
 
 %description
 NAME
 Module::Pluggable - automatically give your module the ability to have
 plugins
 
-%package man
-Summary: man components for the perl-Module-Pluggable package.
-Group: Default
+%package dev
+Summary: dev components for the perl-Module-Pluggable package.
+Group: Development
+Provides: perl-Module-Pluggable-devel = %{version}-%{release}
 
-%description man
-man components for the perl-Module-Pluggable package.
+%description dev
+dev components for the perl-Module-Pluggable package.
 
 
 %prep
@@ -51,9 +52,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -62,11 +63,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Devel/InnerPackage.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Pluggable.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Pluggable/Object.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Devel/InnerPackage.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Pluggable.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Pluggable/Object.pm
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Devel::InnerPackage.3
 /usr/share/man/man3/Module::Pluggable.3
