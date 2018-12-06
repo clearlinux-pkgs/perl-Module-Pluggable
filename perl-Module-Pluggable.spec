@@ -63,9 +63,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/Devel/InnerPackage.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Pluggable.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Pluggable/Object.pm
+/usr/lib/perl5/vendor_perl/5.28.1Devel/InnerPackage.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Pluggable.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Pluggable/Object.pm
 
 %files dev
 %defattr(-,root,root,-)
