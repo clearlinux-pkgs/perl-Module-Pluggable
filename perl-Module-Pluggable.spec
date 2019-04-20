@@ -4,10 +4,10 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
-Summary  : 'automatically give your module the ability to have plugins'
+Summary  : automatically give your module the ability to have plugins
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -21,6 +21,7 @@ plugins
 Summary: dev components for the perl-Module-Pluggable package.
 Group: Development
 Provides: perl-Module-Pluggable-devel = %{version}-%{release}
+Requires: perl-Module-Pluggable = %{version}-%{release}
 
 %description dev
 dev components for the perl-Module-Pluggable package.
@@ -63,9 +64,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/Devel/InnerPackage.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Module/Pluggable.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Module/Pluggable/Object.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Devel/InnerPackage.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Module/Pluggable.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Module/Pluggable/Object.pm
 
 %files dev
 %defattr(-,root,root,-)
