@@ -4,12 +4,13 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
-Summary  : automatically give your module the ability to have plugins
+Summary  : 'automatically give your module the ability to have plugins'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Module-Pluggable-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -27,14 +28,24 @@ Requires: perl-Module-Pluggable = %{version}-%{release}
 dev components for the perl-Module-Pluggable package.
 
 
+%package perl
+Summary: perl components for the perl-Module-Pluggable package.
+Group: Default
+Requires: perl-Module-Pluggable = %{version}-%{release}
+
+%description perl
+perl components for the perl-Module-Pluggable package.
+
+
 %prep
 %setup -q -n Module-Pluggable-5.2
+cd %{_builddir}/Module-Pluggable-5.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -44,7 +55,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -64,12 +75,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Devel/InnerPackage.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Module/Pluggable.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Module/Pluggable/Object.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Devel::InnerPackage.3
 /usr/share/man/man3/Module::Pluggable.3
 /usr/share/man/man3/Module::Pluggable::Object.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Devel/InnerPackage.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Module/Pluggable.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Module/Pluggable/Object.pm
