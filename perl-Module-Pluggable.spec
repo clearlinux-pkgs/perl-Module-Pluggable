@@ -4,7 +4,7 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 5.2
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
@@ -84,6 +84,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Devel/InnerPackage.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Pluggable.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Pluggable/Object.pm
+/usr/lib/perl5/*
