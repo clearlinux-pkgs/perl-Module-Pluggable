@@ -6,16 +6,15 @@
 # autospec commit: f35655a
 #
 Name     : perl-Module-Pluggable
-Version  : 6.1
-Release  : 27
-URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.1.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.1.tar.gz
+Version  : 6.2
+Release  : 28
+URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.2.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.2.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Module-Pluggable-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
-BuildRequires : perl(File::Slurp)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -45,10 +44,10 @@ perl components for the perl-Module-Pluggable package.
 
 
 %prep
-%setup -q -n Module-Pluggable-6.1
-cd %{_builddir}/Module-Pluggable-6.1
+%setup -q -n Module-Pluggable-6.2
+cd %{_builddir}/Module-Pluggable-6.2
 pushd ..
-cp -a Module-Pluggable-6.1 buildavx2
+cp -a Module-Pluggable-6.2 buildavx2
 popd
 
 %build
