@@ -7,7 +7,7 @@
 #
 Name     : perl-Module-Pluggable
 Version  : 6.3
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.3.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-6.3.tar.gz
 Summary  : 'automatically give your module the ability to have plugins'
